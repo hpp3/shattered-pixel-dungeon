@@ -90,7 +90,7 @@ public class GameScene extends PixelScene {
 	private static final String TXT_SECRETS	= "The atmosphere hints that this floor hides many secrets.";
 	
 	static GameScene scene;
-
+	public static boolean freezeEmitters = false;
 	private SkinnedBlock water;
 	private DungeonTilemap tiles;
 	private FogOfWar fog;
@@ -128,7 +128,7 @@ public class GameScene extends PixelScene {
 		Music.INSTANCE.volume( 1f );
 		
 		ShatteredPixelDungeon.lastClass(Dungeon.hero.heroClass.ordinal());
-		
+
 		super.create();
 		Camera.main.zoom( GameMath.gate(minZoom, defaultZoom + ShatteredPixelDungeon.zoom(), maxZoom));
 		

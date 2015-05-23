@@ -54,6 +54,8 @@ public class Toolbar extends Component {
 	private Tool btnInventory;
 	private Tool btnQuick;
 	private Tool btnQuick2;
+	private Tool btnQuick3;
+	private Tool btnQuick4;
 
 	public static int QuickSlots;
 	
@@ -128,8 +130,10 @@ public class Toolbar extends Component {
 				gold.fill( this );
 			};
 		} );
-		
+
 		add( btnQuick = new QuickslotTool( 105, 7, 22, 24, 0) );
+		btnQuick3 = new QuickslotTool( 105, 7, 22, 24, 2);
+		btnQuick4 = new QuickslotTool( 105, 7, 22, 24, 3);
 
 		btnQuick2 = new QuickslotTool( 105, 7, 22, 24, 1);
 		
@@ -144,6 +148,12 @@ public class Toolbar extends Component {
 		//btnResume.setPos( btnInfo.right(), y );
 		btnQuick.setPos( width - btnQuick.width(), y );
 		btnQuick2.setPos( btnQuick.left() - btnQuick2.width(), y );
+		btnQuick3.setPos(btnQuick2.left(), y -	 btnQuick3.height());
+		btnQuick4.setPos(btnQuick.left(), y + btnQuick4.height());
+		add(btnQuick3);
+		btnQuick3.visible = true;
+		add(btnQuick4);
+		btnQuick4.visible = true;
 		if (QuickSlots == 2){
 			add(btnQuick2);
 			btnQuick2.visible = btnQuick2.active = true;
